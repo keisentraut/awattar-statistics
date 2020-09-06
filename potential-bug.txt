@@ -1,0 +1,19 @@
+$ curl https://api.awattar.de/v1/marketdata?start=1538265600000
+{
+  "object": "list",
+  "data": [
+    {
+      "start_timestamp": 1538344800000,
+      "end_timestamp": 1538348400000,
+      "marketprice": 59.53,
+      "unit": "Eur/MWh"
+    },
+    {
+      "start_timestamp": 1538348400000,
+      "end_timestamp": 1538352000000,
+      "marketprice": 56.1,
+      "unit": "Eur/MWh"
+    }
+  ],
+  "url": "/de/v1/marketdata"
+}
