@@ -2,22 +2,27 @@
 
 There is a new, very interesting offer in Germany for a dynamic power contract.
 The company is called [aWATTar](https://www.awattar.de) and offers an HOURLY tariff which is based on the EPEX Spot Day-Ahead price.
-
 I don't have a smart meter yet and only know my yearly power consumption.
-I wanted to be able to get some rough idea about the expected costs of aWATTar HOURLY and therefore I created this visualization script. 
+So I wasn't able to use the [Lohnt sich aWATTar?](https://github.com/foscoj/lohnt-sich-awattar) project.
+
+I wanted to be able to get some rough idea about the expected costs of aWATTar HOURLY and therefore I created this visualization script.
 
 # Data Source
 
 The source of this data is the official (German) [aWATTar API](https://www.awattar.de/services/api).
+**Please note that this price is without VAT.**
+So you will need to add 19% in order to get the actual prices for customers.
+
 All data is only collected once and then cached.
-For convenience, this repository comes with the pre-downloaded data from 2013-12-22 until 2020-09-07.
+For convenience, this repository comes with the pre-downloaded data from ```2013-12-22``` until ```2020-09-07```.
 
 # Usage
 
 In order to get the latest daily data, please run ```./awattar-statistics.py update``` first.
 This will download and append the missing data to the file ```historical-data.txt```.
 
-Then run ```./awattar-statistics.py calculate``` which will create all the files and 
+Then run ```./awattar-statistics.py calculate``` which will create all the files and visualizations.
+This will take a few minutes of generation.
 
 # Output
 
@@ -36,6 +41,8 @@ There are three types of visualizations:
 
 I find the monthly percentile charts the most interesting. Those look like the following:
 ![Visualization for July 2020](plot_monthly_2020-07.png)
+
+# Contributing
 
 If you want to have another visualization, please feel free to open an issue or - if you can - a pull request.
 
