@@ -306,7 +306,7 @@ def print_usage():
     print("")
     print("This is a simple script which Klaus Eisentraut wrote in order to get")
     print("a rough idea about the EPEX Day-Ahead price and how much the aWATTar")
-    print("HOURLY dynamic power contract will cost me in reality.")
+    print("HOURLY dynamic power contract will cost him in reality.")
     print("")
     print("Usage:")
     print("")
@@ -316,6 +316,8 @@ def print_usage():
     print("  ./awattar-statistics.py calculate")
     print("     create interesting statistics and write them to the output folder")
     print("")
+    print("Usually you should run \"update\" first, then \"calculate\".")
+    print("Afterwards, look into the graphs in the ./out/ folder.")
 
 
 if __name__ == "__main__":

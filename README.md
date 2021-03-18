@@ -41,6 +41,12 @@ There are three types of visualizations:
 
 I find the monthly percentile charts the most interesting. Those look like the following:
 ![Visualization for July 2020](plot_monthly_2020-07.png)
+This graph shows the percentiles for each hour:
+
+* The minimum 12:00-13:00 price in July 2020 was -6ct per kWh.
+* 10% of the days, the 12:00-13:00 price was below zero, 90% it was above.
+* The median price for 12:00-13:00 was a little below 3ct per kWh. 50% of the days, the price between 12:00 and 13:00 was therefore below 3ct per kWh and the other half of the days, the price was above.
+* The maximum price between 12:00 and 13:00 in July 2020 was around 5.5ct per kWh.
 
 # Contributing
 
