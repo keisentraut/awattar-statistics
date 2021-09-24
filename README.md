@@ -14,7 +14,7 @@ The source of this data is the official (German) [aWATTar API](https://www.awatt
 So you will need to add 19% in order to get the actual prices for customers.
 
 All data is only collected once and then cached.
-For convenience, this repository comes with the pre-downloaded data from ```2013-12-22``` until ```2020-09-21```.
+For convenience, this repository comes with the pre-downloaded data from ```2013-12-22``` until ```2021-09-24```.
 
 # Usage
 
