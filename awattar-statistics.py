@@ -22,7 +22,7 @@ SLEEP_TIME = 1
 DATA_START_DATE = datetime.date(2013,12,22)
 cmap=colors.LinearSegmentedColormap.from_list('gr',["g", "y", "r"], N=256)
 YMIN = -70
-YMAX = 150
+YMAX = 500
 
 
 data = []
