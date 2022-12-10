@@ -21,8 +21,8 @@ SLEEP_TIME = 1
 # aWATTar API gives data from this day on
 DATA_START_DATE = datetime.date(2013,12,22)
 cmap=colors.LinearSegmentedColormap.from_list('gr',["g", "y", "r"], N=256)
-YMIN = -70
-YMAX = 500
+YMIN = -50
+YMAX = 600
 
 
 data = []
@@ -174,11 +174,12 @@ def calculate():
 
         # plot day chart
         c = list(map(cmap, [int((float(i)-YMIN)/(YMAX-YMIN)*256) for i in d]))
+        plt.figure(figsize=(4096/300, 2160/300), dpi=300)
         plt.bar(name_hours(len(d)),d, align="edge", color=c)
         plt.title(f"{cur_date}")
         plt.xticks(np.arange(len(d)), name_hours(len(d)))
         plt.xlabel("hour of day")
-        plt.yticks(np.arange(YMIN, YMAX, step=10))
+        plt.yticks(np.arange(YMIN, YMAX, step=50))
         plt.ylabel("Eur/MWh")
         plt.ylim(YMIN,YMAX)
         plt.axhline(0)
@@ -256,6 +257,7 @@ def calculate():
             p50.append(get_percentil(v[h], 0.5))
             p90.append(get_percentil(v[h], 0.9))
             p100.append(get_percentil(v[h], 1.0))
+        plt.figure(figsize=(4096/300, 2160/300), dpi=300)
         plt.bar(name_hours(24, short=True), list(map(operator.sub, p10,  p0)),  bottom=p0,  align="edge", color="green")
         plt.bar(name_hours(24, short=True), list(map(operator.sub, p50,  p10)), bottom=p10, align="edge", color="lime")
         plt.bar(name_hours(24, short=True), list(map(operator.sub, p90,  p50)), bottom=p50, align="edge", color="orange")
@@ -263,7 +265,7 @@ def calculate():
         plt.title(f"0/0.1/0.5/0.9/1.0 percentiles for {m}")
         plt.xticks(np.arange(24), name_hours(24,short=True))
         plt.xlabel("hour of day")
-        plt.yticks(np.arange(YMIN, YMAX, step=10))
+        plt.yticks(np.arange(YMIN, YMAX, step=50))
         plt.ylabel("Eur/MWh")
         plt.ylim(YMIN,YMAX)
         plt.axhline(0)
@@ -282,6 +284,7 @@ def calculate():
             p50.append(get_percentil(v[h], 0.5))
             p90.append(get_percentil(v[h], 0.9))
             p100.append(get_percentil(v[h], 1.0))
+        plt.figure(figsize=(4096/300, 2160/300), dpi=300)
         plt.bar(name_hours(24, short=True), list(map(operator.sub, p10,  p0)),  bottom=p0,  align="edge", color="green")
         plt.bar(name_hours(24, short=True), list(map(operator.sub, p50,  p10)), bottom=p10, align="edge", color="lime")
         plt.bar(name_hours(24, short=True), list(map(operator.sub, p90,  p50)), bottom=p50, align="edge", color="orange")
@@ -289,7 +292,7 @@ def calculate():
         plt.title(f"0/0.1/0.5/0.9/1.0 percentiles for {y}")
         plt.xticks(np.arange(24), name_hours(24,short=True))
         plt.xlabel("hour of day")
-        plt.yticks(np.arange(YMIN, YMAX, step=10))
+        plt.yticks(np.arange(YMIN, YMAX, step=50))
         plt.ylabel("Eur/MWh")
         plt.ylim(YMIN,YMAX)
         plt.axhline(0)
